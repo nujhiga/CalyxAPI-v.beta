@@ -41,23 +41,23 @@ public abstract class BaseRepository<TMDL>(CalyxDbContext ctx) : IBaseRepository
 
 public static class RepositoryExtensions
 {
-    public static async Task<TMDL> SingleDefault<TMDL>(this IQueryable<TMDL> source, int id) where TMDL : class, IBaseModel
+    public static async Task<TMDL> SingleDefaultAsync<TMDL>(this IQueryable<TMDL> source, int id) where TMDL : class, IBaseModel
     {
         var mdl = await source.SingleOrDefaultAsync(m => m.Id == id);
         return mdl!;
     }
 
-    public static async Task<TMDL> SingleDefault<TMDL>(this IQueryable<TMDL> source, Expression<Func<TMDL, bool>> predicate) where TMDL : class, IBaseModel, new()
+    public static async Task<TMDL> SingleDefaultAsync<TMDL>(this IQueryable<TMDL> source, Expression<Func<TMDL, bool>> predicate) where TMDL : class, IBaseModel, new()
     {
         var mdl = await source.SingleOrDefaultAsync(predicate);
         return mdl!;
     }
-    public static async Task<TMDL> FirstDefault<TMDL>(this IQueryable<TMDL> source, int id) where TMDL : class, IBaseModel, new()
+    public static async Task<TMDL> FirstDefaultAsync<TMDL>(this IQueryable<TMDL> source, int id) where TMDL : class, IBaseModel, new()
     {
         var mdl = await source.FirstOrDefaultAsync(m => m.Id == id);
         return mdl!;
     }
-    public static async Task<TMDL> FirstDefault<TMDL>(this IQueryable<TMDL> source, Expression<Func<TMDL, bool>> predicate) where TMDL : class, IBaseModel, new()
+    public static async Task<TMDL> FirstDefaultAsync<TMDL>(this IQueryable<TMDL> source, Expression<Func<TMDL, bool>> predicate) where TMDL : class, IBaseModel, new()
     {
         var mdl = await source.FirstOrDefaultAsync(predicate);
         return mdl!;

@@ -31,7 +31,7 @@ public class CoursesRespository(CalyxDbContext ctx) : BaseRepository<Course>(ctx
             ThenInclude(s => s.Person).
             ThenInclude(p => p.PersonIdentity).
             ThenInclude(i => i!.IdentityType).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return student.ToCourseStudents();
     }
@@ -52,7 +52,7 @@ public class CoursesRespository(CalyxDbContext ctx) : BaseRepository<Course>(ctx
     {
         var subject = await _ctx.Courses.
             Include(c => c.Subjects).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return subject.ToCourseSubjects();
     }

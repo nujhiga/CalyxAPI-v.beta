@@ -20,6 +20,8 @@ builder.Services.AddDbContext<CalyxDbContext>(options =>
 
 builder.Services.AddScoped<IPersonRepository, PersonsRepository>();
 builder.Services.AddScoped<IStudentsRepository, StudentsRepository>();
+builder.Services.AddScoped<ICoursesRepository, CoursesRespository>();
+builder.Services.AddScoped<ITeachersRepository, TeacherRepository>();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

@@ -17,7 +17,7 @@ public class StudentsRepository(CalyxDbContext ctx) : BaseRepository<Student>(ct
             Include(s => s.Course).
             Include(s => s.ModeNavigation).
             Include(s => s.StatusNavigation).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return student.ToStudentCourse();
     }

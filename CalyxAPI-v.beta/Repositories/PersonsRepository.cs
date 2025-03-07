@@ -41,7 +41,7 @@ public sealed class PersonsRepository(CalyxDbContext ctx) : BaseRepository<Perso
     {
         var person = await _ctx.Persons.
             Include(p => p.PersonContact).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return person!.ToPersonContact();
     }
@@ -61,7 +61,7 @@ public sealed class PersonsRepository(CalyxDbContext ctx) : BaseRepository<Perso
         var person = await _ctx.Persons.
             Include(p => p.PersonIdentity).
             Include(p => p.PersonIdentity!.IdentityType).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return person!.ToPersonIdentity();
     }
@@ -79,7 +79,7 @@ public sealed class PersonsRepository(CalyxDbContext ctx) : BaseRepository<Perso
     {
         var person = await _ctx.Persons.
             Include(p => p.PersonLocation).
-            SingleDefault(id);
+            SingleDefaultAsync(id);
 
         return person!.ToPersonLocation();
     }
