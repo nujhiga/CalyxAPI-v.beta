@@ -17,12 +17,6 @@ public static class CoursesMapper
         };
     }
 
-    public static IEnumerable<CourseStudentsResponse> ToCourseStudents(this IEnumerable<Course> courses)
-    {
-        foreach (var course in courses)
-            yield return course.ToCourseStudents();
-    }
-
     public static CourseStudentsResponse ToCourseStudents(this Course course)
     {
         var courseResponse = new CourseStudentsResponse
@@ -35,12 +29,6 @@ public static class CoursesMapper
             courseResponse.Students.Add(student.ToStudentCourse(false));
 
         return courseResponse;
-    }
-
-    public static IEnumerable<CourseSubjectsResponse> ToCourseSubjects(this IEnumerable<Course> courses)
-    {
-        foreach (var course in courses)
-            yield return course.ToCourseSubjects();
     }
 
     public static CourseSubjectsResponse ToCourseSubjects(this Course course)
