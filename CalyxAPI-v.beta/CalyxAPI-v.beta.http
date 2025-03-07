@@ -1,0 +1,6 @@
+@CalyxAPI_v.beta_HostAddress = http://localhost:5277
+
+GET {{CalyxAPI_v.beta_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
