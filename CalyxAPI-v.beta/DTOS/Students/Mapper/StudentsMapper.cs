@@ -8,6 +8,8 @@ public static class StudentsMapper
 {
     public static StudentCourseResponse ToStudentCourse(this Student student, bool navigationProperties = true)
     {
+        if (student is null) return null!;
+
         var personIdentity = student.Person.PersonIdentity;
 
         return new StudentCourseResponse

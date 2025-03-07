@@ -23,6 +23,7 @@
     <Folder Include="DTOS\Students\Request\" />
     <Folder Include="DTOS\Subjects\Request\" />
     <Folder Include="DTOS\Teachers\Request\" />
+    <Folder Include="Models\Interfaces\" />
   </ItemGroup>
 
 </Project>

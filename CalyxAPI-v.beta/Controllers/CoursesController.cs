@@ -1,11 +1,8 @@
-﻿using CalyxAPI_v.beta.Data;
-using CalyxAPI_v.beta.DTOS.Courses.Mapper;
-using CalyxAPI_v.beta.Repositories.Interfaces;
+﻿using CalyxAPI_v.beta.Repositories.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace CalyxAPITest.Controllers;
+namespace CalyxAPI_v.beta.Controllers;
 
 [Route("api/courses")]
 [ApiController]

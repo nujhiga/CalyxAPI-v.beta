@@ -45,9 +45,6 @@ public partial class CalyxDbContext : DbContext
 
     public virtual DbSet<Teacher> Teachers { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=localhost;Database=CalyxTest3;Trusted_Connection=True;Encrypt=False;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -418,7 +415,7 @@ public partial class CalyxDbContext : DbContext
 
             entity.HasIndex(e => new { e.PersonId, e.CourseId }, "UQ_teachers").IsUnique();
 
-            entity.Property(e => e.TeacherId).HasColumnName("teacher_id");
+            entity.Property(e => e.Id).HasColumnName("teacher_id");
             entity.Property(e => e.CourseId).HasColumnName("course_id");
             entity.Property(e => e.Enabled).HasColumnName("enabled");
             entity.Property(e => e.PersonId).HasColumnName("person_id");

@@ -1,5 +1,4 @@
 using CalyxAPI_v.beta.Data;
-using CalyxAPI_v.beta.Models;
 using CalyxAPI_v.beta.Repositories;
 using CalyxAPI_v.beta.Repositories.Interfaces;
 
@@ -20,6 +19,7 @@ builder.Services.AddDbContext<CalyxDbContext>(options =>
 });
 
 builder.Services.AddScoped<IPersonRepository, PersonsRepository>();
+builder.Services.AddScoped<IStudentsRepository, StudentsRepository>();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

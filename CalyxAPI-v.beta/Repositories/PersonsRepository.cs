@@ -2,9 +2,11 @@
 using CalyxAPI_v.beta.DTOS.Persons.Mapper;
 using CalyxAPI_v.beta.DTOS.Persons.Response;
 using CalyxAPI_v.beta.Models;
+using CalyxAPI_v.beta.Models.Base;
 using CalyxAPI_v.beta.Repositories.Interfaces;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace CalyxAPI_v.beta.Repositories;
 
@@ -48,6 +50,7 @@ public sealed class PersonsRepository(CalyxDbContext ctx) : BaseRepository<Perso
     {
         var persons = await _ctx.Persons.
             Include(p => p.PersonIdentity).
+            Include(p => p.PersonIdentity!.IdentityType).
             Select(p => p.ToPersonIdentity()).
             ToListAsync();
 
@@ -79,5 +82,16 @@ public sealed class PersonsRepository(CalyxDbContext ctx) : BaseRepository<Perso
             SingleDefault(id);
 
         return person!.ToPersonLocation();
+    }
+
+}
+
+internal static class PersonRepositoryExtensions
+{
+    internal static IQueryable<TMDL> IncludePersonIdentityQuery<TMDL>(this IQueryable<TMDL> query) where TMDL : BaseModel, IPersonReference
+    {
+        return query.Include(p => p.Person).
+            ThenInclude(p => p.PersonIdentity).
+            ThenInclude(i => i!.IdentityType);
     }
 }

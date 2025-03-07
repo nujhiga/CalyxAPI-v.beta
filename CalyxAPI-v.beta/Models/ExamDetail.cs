@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace CalyxAPI_v.beta.Models;
+﻿namespace CalyxAPI_v.beta.Models;
 
 public partial class ExamDetail
 {

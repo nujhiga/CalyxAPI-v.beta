@@ -1,11 +1,8 @@
 ﻿using CalyxAPI_v.beta.Models.Base;
 
-using System;
-using System.Collections.Generic;
-
 namespace CalyxAPI_v.beta.Models;
 
-public partial class Student : BaseModel
+public partial class Student : BaseModel, IPersonReference
 {
     //public int Id { get; set; }
 

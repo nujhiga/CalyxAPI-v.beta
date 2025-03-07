@@ -1,7 +1,6 @@
 ﻿namespace CalyxAPI_v.beta.Controllers;
 
 using CalyxAPI_v.beta.Data;
-using CalyxAPI_v.beta.DTOS.Subjects.Mapper;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

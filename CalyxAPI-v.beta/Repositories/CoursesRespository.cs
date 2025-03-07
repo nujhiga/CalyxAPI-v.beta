@@ -6,8 +6,6 @@ using CalyxAPI_v.beta.Repositories.Interfaces;
 
 using Microsoft.EntityFrameworkCore;
 
-using System.Net.WebSockets;
-
 namespace CalyxAPI_v.beta.Repositories;
 
 public class CoursesRespository(CalyxDbContext ctx) : BaseRepository<Course>(ctx), ICoursesRepository

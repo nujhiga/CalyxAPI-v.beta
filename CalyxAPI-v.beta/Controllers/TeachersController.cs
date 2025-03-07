@@ -4,8 +4,6 @@ using CalyxAPI_v.beta.DTOS.Teachers.Mapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-using System.Data.SqlTypes;
-
 namespace CalyxAPI_v.beta.Controllers;
 
 [Route("api/teachers")]
@@ -34,7 +32,7 @@ public class TeachersController(CalyxDbContext ctx) : ControllerBase
             Include(t => t.Person).
             Include(t => t.Person.PersonIdentity).
             Include(t => t.Person.PersonIdentity!.IdentityType).
-            SingleOrDefaultAsync(t => t.TeacherId == id);
+            SingleOrDefaultAsync(t => t.Id == id);
 
         if (teacher is null) return NotFound();
 
@@ -63,7 +61,7 @@ public class TeachersController(CalyxDbContext ctx) : ControllerBase
             Include(t => t.Person.PersonIdentity).
             Include(t => t.Person.PersonIdentity!.IdentityType).
             Include(t => t.Course).
-            SingleOrDefaultAsync(t => t.TeacherId == id);
+            SingleOrDefaultAsync(t => t.Id == id);
 
         if (teacher is null) return NotFound();
         

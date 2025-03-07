@@ -1,11 +1,6 @@
-﻿using CalyxAPI_v.beta.Data;
-using CalyxAPI_v.beta.DTOS.Persons.Mapper;
-using CalyxAPI_v.beta.Models;
-using CalyxAPI_v.beta.Repositories;
-using CalyxAPI_v.beta.Repositories.Interfaces;
+﻿using CalyxAPI_v.beta.Repositories.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CalyxAPI_v.beta.Controllers;
 

@@ -1,5 +1,4 @@
 ﻿using CalyxAPI_v.beta.DTOS.Persons.Mapper;
-using CalyxAPI_v.beta.DTOS.Students.Response;
 using CalyxAPI_v.beta.DTOS.Teachers.Response;
 using CalyxAPI_v.beta.Models;
 
